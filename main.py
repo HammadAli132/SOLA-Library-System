@@ -4,11 +4,16 @@ from Modules.book import Book
 
 def main():
     library = Library()
-    book1 = Book("Hobbit", "James Bond", "Adventures", "English", "2016", "Fiction")
+    book1 = Book(5, "Hobbit", "James Bond", "Adventures", "English", "2016", "Fiction")
+    book2 = Book(3, "Rabbit", "James Bond", "Adventures", "English", "2016", "Fiction")
+    book3 = Book(7, "Womit", "James Bond", "Adventures", "English", "2016", "Fiction")
 
-    library.store = book1
-    print(book1)
-    print(library.store)
+    library.storage = book1
+    library.storage = book2
+    library.storage = book3
+
+    library.display()
+    
 
 if __name__ == "__main__":
     main()

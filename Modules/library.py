@@ -5,11 +5,14 @@ from Modules.borrowedItems import BorrowedItemsList
 
 class Library:
     def __init__(self):
-        self.__store = Storage()
+        self.__storage = Storage()
 
     @property
-    def store(self): return self.__store
+    def storage(self): return self.__storage
 
-    @store.setter
-    def store(self, item):
-        self.__store.itemsList = item
+    @storage.setter
+    def storage(self, item):
+        self.__storage.store = item
+
+    def display(self):
+        self.__storage.display()

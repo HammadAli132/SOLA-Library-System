@@ -1,8 +1,8 @@
 from Modules.item import Item
 
 class AudioBook(Item):
-    def __init__(self, name, author, title, lang, yop, cat):
-        super().__init__(name, author, title, lang, yop, cat)
+    def __init__(self, id, name, author, title, lang, yop, cat):
+        super().__init__(id, name, author, title, lang, yop, cat)
         self.__quantity = 0
         self.__chapters = []
 

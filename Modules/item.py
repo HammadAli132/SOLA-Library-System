@@ -1,8 +1,9 @@
+from __future__ import annotations
+
 class Item:
     currentId = 0
-    def __init__(self, name, author, title, lang, yop, cat):
-        Item.currentId += 1
-        self.__itemId = Item.currentId
+    def __init__(self,id,  name, author, title, lang, yop, cat):
+        self.__itemId = id
         self.__name = name
         self.__author = author
         self.__title = title
@@ -12,6 +13,9 @@ class Item:
 
     @property
     def itemId(self): return self.__itemId
+
+    @itemId.setter
+    def itemId(self, val): self.__itemId = val
 
     @property
     def name(self): return self.__name
@@ -48,3 +52,12 @@ class Item:
 
     @category.setter
     def category(self, val): self.__category = val
+
+    def __eq__(self, other:Item) -> bool:
+        return self.itemId == other.itemId
+    
+    def __gt__ (self, other:Item) -> bool:
+        return self.itemId > other.itemId
+
+    def __le__ (self, other:Item) -> bool:
+        return self.itemId <= other.itemId
