@@ -136,9 +136,18 @@ class DoublyLinkedList:
             curr.next = None
         else:
             curr = head
-            while curr.next.data != val or curr.next is not None:
+            while curr.next.data != val and curr.next is not None:
+                curr = curr.next
+            if curr.next.next is None:
+                curr.next.prev = None
+                curr.next = None
+            else:
+                temp:ListNode = curr.next
                 curr.next = curr.next.next
                 curr.next.prev = curr
+                temp.next = None
+                temp.prev = None
+
         return head
     
     def search(self, head:ListNode, val) -> ListNode:

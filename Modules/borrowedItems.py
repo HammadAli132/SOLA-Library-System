@@ -10,3 +10,6 @@ class BorrowedItemsList:
     def addNewBorrowedItem(self, borroweAN, itemName, itemID, date):
         borrowedItem = BorrowedItem(borroweAN, itemName, itemID, date)
         self.__BIL.append(borrowedItem)
+    
+    def deleteBorrowedItem(self, item):
+        self.__BIL.remove(item)

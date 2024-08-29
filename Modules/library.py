@@ -26,4 +26,4 @@ class Library:
         self.__borrowerList.display()
 
     def delete(self, val):
-        self.__storage.delete(val)
+        self.__borrowerList.remove(val)
