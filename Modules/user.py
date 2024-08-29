@@ -35,7 +35,7 @@ class User:
         self.__password = val
         
     @property
-    def status(self): return self.__status
+    def status(self): return "Registered" if self.__status else "Not Registered"
 
     @status.setter
     def status(self, val): 

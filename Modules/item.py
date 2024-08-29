@@ -1,4 +1,5 @@
 from __future__ import annotations
+from typing import Any
 
 class Item:
     currentId = 0
@@ -58,6 +59,9 @@ class Item:
     
     def __gt__ (self, other:Item) -> bool:
         return self.itemId > other.itemId
+
+    def __lt__ (self, other:Item) -> bool:
+        return self.itemId < other.itemId
 
     def __le__ (self, other:Item) -> bool:
         return self.itemId <= other.itemId

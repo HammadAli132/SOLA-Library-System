@@ -11,7 +11,7 @@ class Storage:
 
     @store.setter
     def store(self, val):
-        self.__store.insert(self.__store.root, val)
+        self.__store.add(val)
         self.__totalItems += 1
 
     def display(self):
@@ -19,3 +19,7 @@ class Storage:
         self.__store.getItems(self.__store.root, rack)
         for item in rack:
             print(item)
+
+    def delete(self, val):
+        self.__store.delete(val)
+        self.__totalItems -= 1
