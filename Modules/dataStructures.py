@@ -25,13 +25,18 @@ class TreeNode:
 class BinarySearchTree:
     def __init__(self):
         self.__root:TreeNode = None
+        self.__count = 0
 
     @property
     def root(self): return self.__root
 
+    @property
+    def count(self): return self.__count
+
     def _insert(self, root:TreeNode, val):
         if root is None:
             root = TreeNode(val)
+            self.__count += 1
             return root
         if root.data > val:
             root.left = self._insert(root.left, val)
@@ -48,8 +53,10 @@ class BinarySearchTree:
             root.right = self._remove(root.right, val)
         else:
             if root.left is None: # Case 1
+                self.__count -= 1
                 return root.right
             elif root.right is None: # Case 2
+                self.__count -= 1
                 return root.left
             elif root.right is not None and root.left is not None: # Case 3
                 inorderSuccessor:TreeNode = root.right
@@ -57,6 +64,7 @@ class BinarySearchTree:
                     inorderSuccessor = inorderSuccessor.left
                 root.data = inorderSuccessor.data
                 root.right = self._remove(root.right, inorderSuccessor.data)
+                self.__count -= 1
             
         return root
     

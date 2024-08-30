@@ -38,5 +38,5 @@ class User:
     def status(self): return "Registered" if self.__status else "Not Registered"
 
     @status.setter
-    def status(self, val): 
+    def status(self, val):
         self.__status = val

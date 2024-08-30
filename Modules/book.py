@@ -17,14 +17,16 @@ class Book(Item):
     def chapters(self): return self.__chapters
 
     @chapters.setter
-    def chapters(self, val): self.__chapters = val
+    def chapters(self, val): 
+        self.__chapters.append(val)
 
-    def getChapters(self):
+    def getChapters(self) -> str:
         if len(self.__chapters) == 0:
             return "None"
         str = ""
+        i = 1
         for chap in self.__chapters:
-            str += f"\n{chap['chapter']} on Page {chap['page']}"
+            str += f"\n         Chapter {chap['chapter']} has name {chap['name']}"
         return str
 
     def __str__(self):

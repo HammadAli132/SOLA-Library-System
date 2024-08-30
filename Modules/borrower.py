@@ -36,3 +36,13 @@ class Borrower(User):
 
     def __ne__(self, other:Borrower) -> bool:
         return self.__borrowerAN != other.borrowerAN
+    
+    def borrowerManual() -> str:
+        str = """
+    1- Borrow an item from Library
+    2- Return an item to Library
+    3- Search for an item in Library
+    4- Get details of an item
+    5- Search all books by a specific author
+    6- See borrow details"""
+        return input(str)
